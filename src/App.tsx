@@ -1,7 +1,8 @@
 import './App.css'
 import { Routes, Route} from "react-router-dom";
 import Firstpage from './components/FirstPage/Firstpage';
-import Secondpage from './components/SecondPage/Secondpage';
+import Secondpage from './components/Secondpage/Secondpage';
+
 
 function App() {
 
@@ -9,7 +10,7 @@ function App() {
     <>
       <Routes>
         <Route path="/" element={<Firstpage />} />
-        <Route path="/user" element={<Secondpage />} />
+        <Route path="/user" element={<Secondpage/>} />
       </Routes>
     </>
   );

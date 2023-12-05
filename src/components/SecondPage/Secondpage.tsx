@@ -1,17 +1,17 @@
-import Container from "@mui/material/Container";
 import Typography from "@mui/material/Typography";
+import Stack from "@mui/material/Stack";
+import Component1 from "../Component1/Component1";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserDetails from "../../interfaces/UserDetails";
 
-const SecondPage: React.FC = () => {
+const Secondpage: React.FC = () => {
   const navigate = useNavigate();
   const [userDetails, setUserDetails] = useState<UserDetails>({
     name: "",
     phone: "",
     email: "",
   });
-
   useEffect(() => {
     const userDetailsString = localStorage.getItem("userDetails");
     const parsedUserDetails = userDetailsString
@@ -29,16 +29,23 @@ const SecondPage: React.FC = () => {
       navigate("/");
     }
   }, [navigate]);
-
   return (
-    <Container>
-      <Typography variant="h4">Second Page</Typography>
-      <Typography>
-        Welcome, {userDetails.name}! Phone: {userDetails.phone}, Email:
-        {userDetails.email}
-      </Typography>
-    </Container>
+    <div>
+      <Stack
+        alignItems="center"
+        spacing={4}
+        style={{
+          padding: "20px 0",
+        }}
+      >
+        <Typography fontWeight="bold" variant="h4">
+          Second Page
+        </Typography>
+        <Typography variant="h4">Welcome, {userDetails.name}!</Typography>
+      </Stack>
+      <Component1 />
+    </div>
   );
 };
 
-export default SecondPage;
+export default Secondpage;
