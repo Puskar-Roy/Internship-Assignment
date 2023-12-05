@@ -1,7 +1,7 @@
 import './App.css'
 import { Routes, Route} from "react-router-dom";
 import Firstpage from './components/FirstPage/Firstpage';
-import Secondpage from './components/Secondpage/Secondpage';
+import Secondpage from './components/SecondPage/Secondpage';
 
 
 
