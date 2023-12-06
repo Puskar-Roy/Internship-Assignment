@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
 import Stack from "@mui/material/Stack";
 import Component1 from "../Component1/Component1";
+import Component2 from "../Component2/Component2";
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import UserDetails from "../../interfaces/UserDetails";
@@ -28,7 +29,7 @@ const Secondpage: React.FC = () => {
       alert("Please enter your details before accessing this page.");
       navigate("/");
     }
-  }, [navigate]);
+  }, []);
   return (
     <div>
       <Stack
@@ -43,7 +44,16 @@ const Secondpage: React.FC = () => {
         </Typography>
         <Typography variant="h4">Welcome, {userDetails.name}!</Typography>
       </Stack>
-      <Component1 />
+      <Stack
+        alignItems="center"
+        spacing={4}
+        style={{
+          padding: "20px 0",
+        }}
+      >
+        <Component1 />
+        <Component2 />
+      </Stack>
     </div>
   );
 };
